@@ -1,0 +1,17 @@
+{
+  "name": "sendlink-to-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "nodemailer": "^6.9.3",
+    "uuid": "^9.0.0"
+  }
+}
