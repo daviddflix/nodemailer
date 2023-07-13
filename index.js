@@ -1,5 +1,8 @@
 import { createTransport } from "nodemailer";
+import dotenv from 'dotenv';
+dotenv.config();
 
+const emailPassword = process.env.EMAIL_PASSWORD;
 
 const transporter = createTransport({
   host: 'smtp.gmail.com',
@@ -7,7 +10,7 @@ const transporter = createTransport({
   secure: false, // set to true when using SSL/TLS
   auth: {
     user: 'daviddflix@gmail.com',
-    pass: 'jchmimzuurlmpndh'
+    pass: emailPassword
   },
 });
 
@@ -16,7 +19,7 @@ const transporter = createTransport({
 function sendEmailWithExpirationLink() {
   
   let link = 'https://t.me/qcryto' // generic link
-  
+
   let emailBody = ` <h1 style>Welcome to AI Alpha</h1>
                     <p>We are happy you have decided to try our product</p>
                     <p>To start interacting with AI Alpha Bot</p>
