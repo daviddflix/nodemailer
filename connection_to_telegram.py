@@ -4,6 +4,10 @@ from telegram.ext import Application, ContextTypes, CommandHandler
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 TOKEN: Final = '6185446761:AAGXE98znTx0dEKkRdoA-Zxum2VPOXTSHhI'
 BOT_USERNAME: Final = '@QCryptos_bot'
@@ -19,11 +23,12 @@ async def invitation_link(context):
 
 
 async def send_email(link_to_chat):
-       
+        
+        EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
         smtp_server = 'smtp.gmail.com'
         smtp_port = 587
         sender_email = 'daviddflix@gmail.com'
-        sender_password = 'jchmimzuurlmpndh'
+        sender_password = EMAIL_PASSWORD
         recipient_email = 'david-972010@hotmail.com'
         subject = 'AI Alpha Invitation Link'
 
